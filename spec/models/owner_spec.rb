@@ -17,6 +17,6 @@ describe Owner do
     it { should_not have_valid(:last_name).when('', nil) }
 
     it { should have_valid(:email).when('faizaan@shamsi.com') }
-    it { should_not have_valid(:email).when('', nil, 'faizaan', 'faizaan.com', 'faizaan@com') }
+    it { should_not have_valid(:email).when('', nil, 'faizaan', 'faizaan.com', 'faizaan@comn') }
   end
 end
