@@ -25,7 +25,7 @@ feature "Record a new building", %q{
       fill_in "First Name", with: first_name
       fill_in "Last Name", with: last_name
       fill_in "Email", with: email
-      fill_in "company", with: company
+      fill_in "Company", with: company
       click_on "Create New Owner"
 
       expect(Owner.all.count).to eql(count + 1)
@@ -39,9 +39,9 @@ feature "Record a new building", %q{
       visit new_owner_path
 
       click_on "Create New Owner"
-      expect(page).to have_content "First Nameis too short (minimum is 1 characters)"
-      expect(page).to have_content "Last Nameis too short (minimum is 1 characters)"
-      expect(page).to have_content "Emailis too short (minimum is 1 characters)"
+      expect(page).to have_content "First name is too short"
+      expect(page).to have_content "Last name is too short"
+      expect(page).to have_content "Email is invalid"
     end
   end
 
