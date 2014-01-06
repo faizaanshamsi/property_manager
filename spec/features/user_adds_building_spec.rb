@@ -18,6 +18,7 @@ feature "Record a new building", %q{
     context 'user provides relevent information' do
       it 'creates a new building' do
         count = Building.all.count
+        name = 'The Dorchester'
         street_address = '1116 Dorchester Ave'
         city = 'Boston'
         postal_code = '02125'
@@ -25,6 +26,7 @@ feature "Record a new building", %q{
 
         visit new_building_path
 
+        fill_in "Name", with: name
         fill_in "Street Address", with: street_address
         fill_in "City", with: city
         fill_in "Postal Code", with: postal_code
