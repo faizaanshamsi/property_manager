@@ -25,7 +25,6 @@ feature "Record a new building", %q{
         state = 'MA'
 
         visit new_building_path
-
         fill_in "Name", with: name
         fill_in "Street Address", with: street_address
         fill_in "City", with: city
