@@ -44,11 +44,11 @@ feature "Record a new building", %q{
 
       click_on "Create New Building"
 
-      expect(page).to have_content "Name is too short (minimum is 1 characters)"
-      expect(page).to have_content "Street Address is too short (minimum is 1 characters)"
-      expect(page).to have_content "City is too short (minimum is 1 characters)"
-      expect(page).to have_content "Postal Code is too short (minimum is 1 characters)"
-      expect(page).to have_content "State is not included in the list"
+      expect(page).to have_content "Nameis too short (minimum is 1 characters)"
+      expect(page).to have_content "Street Addressis too short (minimum is 1 characters)"
+      expect(page).to have_content "Cityis too short (minimum is 1 characters)"
+      expect(page).to have_content "Postal Codeis too short (minimum is 1 characters)"
+      expect(page).to have_content "Stateis not included in the list"
     end
   end
 end
