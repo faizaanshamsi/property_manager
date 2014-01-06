@@ -24,7 +24,7 @@ describe Building do
     it { should_not have_valid(:city).when('', nil) }
 
     it { should have_valid(:postal_code).when('02125', 'N2L 1W7') }
-    it { should_not have_valid(:postal).when('', nil) }
+    it { should_not have_valid(:postal_code).when('', nil) }
 
     it { should ensure_inclusion_of(:state).in_array(STATE) }
   end
