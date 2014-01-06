@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-feature "Record a new building", %q{
+feature "Record a new building owner", %q{
   As a real estate associate
   I want to correlate an owner with buildings
   So that I can refer back to pertinent information
@@ -19,7 +19,7 @@ feature "Record a new building", %q{
       city = 'Boston'
       postal_code = '02125'
       state = 'MA'
-      owner = 'Faizaan'
+      owner_id = FactoryGirl.create(:owner).id
 
       visit new_building_path
       fill_in "Name", with: name
@@ -27,7 +27,7 @@ feature "Record a new building", %q{
       fill_in "City", with: city
       fill_in "Postal Code", with: postal_code
       select state, from: "State"
-      select owner, from: "Owner"
+      select owner_id, from: "Owner"
       click_on "Create New Building"
 
       expect(Building.all.count).to eql(count + 1)

@@ -8,4 +8,8 @@ class Building < ActiveRecord::Base
   validates :city, length: { minimum: 1 }
   validates :postal_code, length: { minimum: 1 }
   validates_inclusion_of :state, in: self.state
+  validates_numericality_of :owner_id, only_integer: true, allow_nil: true
+
+  belongs_to :owner,
+    inverse_of: :buildings
 end

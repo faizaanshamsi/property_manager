@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-feature "Record a new building", %q{
+feature "Record a new owner", %q{
   As a real estate associate
   I want to record a building owner
   So that I can keep track of our relationships with owners

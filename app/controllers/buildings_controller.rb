@@ -3,6 +3,7 @@ class BuildingsController < ApplicationController
   def new
     @building = Building.new
     @state = Building.state
+    @owners = Owners.all
   end
 
   def create
