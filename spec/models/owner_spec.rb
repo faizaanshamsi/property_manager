@@ -19,4 +19,8 @@ describe Owner do
     it { should have_valid(:email).when('faizaan@shamsi.com') }
     it { should_not have_valid(:email).when('', nil, 'faizaan', 'faizaan.com', 'faizaan@comn') }
   end
+
+  describe 'Association Tests' do
+    it { should have_many(:buildings).dependent(:nullify) }
+  end
 end

@@ -22,7 +22,6 @@ feature "Record a new building owner", %q{
       owner = FactoryGirl.create(:owner)
 
       visit new_building_path
-      save_and_open_page
       fill_in "Name", with: name
       fill_in "Street Address", with: street_address
       fill_in "City", with: city

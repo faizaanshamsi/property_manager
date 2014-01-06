@@ -13,5 +13,7 @@ FactoryGirl.define do
     city 'Boston'
     postal_code '02125'
     state 'MA'
+
+    owner
   end
 end
