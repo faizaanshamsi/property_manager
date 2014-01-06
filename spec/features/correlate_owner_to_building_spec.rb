@@ -19,15 +19,16 @@ feature "Record a new building owner", %q{
       city = 'Boston'
       postal_code = '02125'
       state = 'MA'
-      owner_id = FactoryGirl.create(:owner).id
+      owner = FactoryGirl.create(:owner)
 
       visit new_building_path
+      save_and_open_page
       fill_in "Name", with: name
       fill_in "Street Address", with: street_address
       fill_in "City", with: city
       fill_in "Postal Code", with: postal_code
       select state, from: "State"
-      select owner_id, from: "Owner"
+      select owner.first_name, from: "Owner"
       click_on "Create New Building"
 
       expect(Building.all.count).to eql(count + 1)

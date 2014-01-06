@@ -16,7 +16,7 @@
   <%= f.input :street_address, label: 'Street Address' %>
   <%= f.input :city, label: 'City' %>
   <%= f.input :state, collection: @state, label: 'State' %>
-  <%= f.input :state, collection: @owners, label: 'Owner' %>
+  <%= f.association :owner, label_method: :first_name,value_method: :id %>
   <%= f.input :postal_code, label: 'Postal Code' %>
   <%= f.input :description, label: 'Description', required: false %>
   <%= f.button :submit, 'Create New Building' %>

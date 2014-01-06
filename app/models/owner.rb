@@ -4,6 +4,6 @@ class Owner < ActiveRecord::Base
   validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i }
 
   has_many :buildings,
-    inverse_of: :owner,
-    dependent: :nullify
+    dependent: :nullify,
+    inverse_of: :owner
 end
