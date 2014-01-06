@@ -1,6 +1,17 @@
 <h1>Create a New Building</h1>
 
 <%= simple_form_for @building do |f| %>
+ <% if @building.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@building.errors.count, "error") %> prohibited this event from being saved:</h2>
+
+      <ul>
+      <% @building.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
   <%= f.input :name, label: 'Name' %>
   <%= f.input :street_address, label: 'Street Address' %>
   <%= f.input :city, label: 'City' %>
